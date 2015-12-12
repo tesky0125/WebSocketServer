@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>socket.io</title>
+</head>
+<body>
+<h1>socket.io</h1>
+<p>Welcome to socket.io</p>
+
+<!--<script src="/socket.io/socket.io.js"></script>-->
+
+<script>
+//var url = 'wss://a1200-pc.s3graphics.com:2000/mgv?user=rylan&password=5fa285e1bebe0a6623e33afc04a1fbd5';
+var url = "wss://localhost:3000/mgv_test";
+
+var connWbSk = new WebSocket(url);
+connWbSk.onopen=function(){
+	console.log('onopen!');
+	connWbSk.send("message from browser!");
+};
+connWbSk.onclose=function(){
+	console.log('onclose!');
+};
+connWbSk.onerror=function(){
+	console.log('onerror!');
+};
+
+</script>
+</body>
+</html>
